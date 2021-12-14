@@ -1,106 +1,78 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "desktop_text_box_position": "flex-end"
-      },
+    "163686083613cf812e": {
+      "type": "hero-one",
       "blocks": {
-        "heading": {
+        "1636860836634704a2-0": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand"
+            "title": "Title",
+            "title_size": "md"
           }
         },
-        "button": {
-          "type": "buttons",
+        "1636860836634704a2-1": {
+          "type": "paragraph",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_label_2": ""
+            "paragraph": "I’m baby deep v tbh offal, next level sriracha semiotics typewriter hoodie crucifix keffiyeh butcher. Beard helvetica pop-up, farm-to-table tumblr 90’s fashion axe."
+          }
+        },
+        "1636860836634704a2-2": {
+          "type": "button",
+          "settings": {
+            "button_text": "View More",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
-      ]
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading"
-        },
-        "text": {
-          "type": "text"
-        },
-        "button": {
-          "type": "button"
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ]
-    },
-    "featured_products": {
-      "type": "featured-collection",
+        "1636860836634704a2-0",
+        "1636860836634704a2-1",
+        "1636860836634704a2-2"
+      ],
       "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "image_ratio": "square"
+        "hero_height": "100vh",
+        "image": "shopify:\/\/shop_images\/nature-photographer.jpg",
+        "background": "#000000",
+        "opacity": 50,
+        "info_alignment": "center"
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "video": {
-          "type": "video"
-        },
-        "product": {
-          "type": "product"
-        },
-        "collection": {
-          "type": "collection"
-        }
-      },
-      "block_order": [
-        "video",
-        "product",
-        "collection"
-      ]
+    "1636862102e2ccd0a5": {
+      "type": "collection-product-1",
+      "settings": {
+        "collection": "adidas-1",
+        "total_products": 1,
+        "container_shape": "rectangle",
+        "image_fit": "contain",
+        "background": "#ffffff",
+        "opacity": 66,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-3",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-3",
+        "sm_col": "col-sm-6"
+      }
     },
-    "video": {
-      "type": "video"
-    },
-    "multi_column": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column"
-        },
-        "column2": {
-          "type": "column"
-        },
-        "column3": {
-          "type": "column"
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ]
+    "163686090968258a1f": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "100vh",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_text1": "Men",
+        "button_link1": "shopify:\/\/blogs\/news",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_text2": "Women",
+        "button_link2": "shopify:\/\/blogs\/example"
+      }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_products",
-    "collage",
-    "video",
-    "multi_column"
+    "163686083613cf812e",
+    "1636862102e2ccd0a5",
+    "163686090968258a1f"
   ]
 }

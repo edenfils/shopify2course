@@ -1,0 +1,183 @@
+
+<div class="hero hero2">
+  
+  <div class="hero2__collection1 hero2--{{section.settings.hero_height }}">
+    {%- if section.settings.image_one != blank -%}
+  <img
+    srcset="{%- if section.settings.image_one.width >= 165 -%}{{ section.settings.image_one | img_url: '165x' }} 165w,{%- endif -%}
+      {%- if section.settings.image_one.width >= 360 -%}{{ section.settings.image_one | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if section.settings.image_one.width >= 535 -%}{{ section.settings.image_one | img_url: '535x' }} 535w,{%- endif -%}
+      {%- if section.settings.image_one.width >= 750 -%}{{ section.settings.image_one | img_url: '750x' }} 750w,{%- endif -%}
+      {%- if section.settings.image_one.width >= 1070 -%}{{ section.settings.image_one | img_url: '1070x' }} 1070w,{%- endif -%}
+      {%- if section.settings.image_one.width >= 1500 -%}{{ section.settings.image_one | img_url: '2000x' }} 2000w,{%- endif -%}
+      {{ section.settings.image_one | img_url: 'master' }} {{ section.settings.image_one.width }}w"
+    src="{{ section.settings.image_one | img_url: '1500x' }}"
+    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 200px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+    alt="{{ section.settings.image_one.alt | escape }}"
+    loading="lazy"
+    width="{{ section.settings.image_one.width }}"
+    height="{{ section.settings.image_one.height }}"
+    class="hero2__bg"
+  >
+{%- else -%}
+  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+{%- endif -%}
+  {% assign opacity1 = section.settings.opacity1 | divided_by: 100.00  %}
+    <div class="hero2__content-container" style="background-color:{{ section.settings.background1 | color_modify: 'alpha', opacity1 }}">
+      <div class="hero2__info">
+        {%- if section.settings.button_link1 != blank -%}
+
+        <a href="{{ section.settings.button_link1 }}"
+        class="hero2__button">{{ section.settings.button_text1 | escape }}</a>
+
+          
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+  <div class="hero2__collection2">
+    {%- if section.settings.image_two != blank -%}
+  <img
+    srcset="{%- if section.settings.image_two.width >= 165 -%}{{ section.settings.image_two | img_url: '165x' }} 165w,{%- endif -%}
+      {%- if section.settings.image_two.width >= 360 -%}{{ section.settings.image_two | img_url: '360x' }} 360w,{%- endif -%}
+      {%- if section.settings.image_two.width >= 535 -%}{{ section.settings.image_two | img_url: '535x' }} 535w,{%- endif -%}
+      {%- if section.settings.image_two.width >= 750 -%}{{ section.settings.image_two | img_url: '750x' }} 750w,{%- endif -%}
+      {%- if section.settings.image_two.width >= 1070 -%}{{ section.settings.image_two | img_url: '1070x' }} 1070w,{%- endif -%}
+      {%- if section.settings.image_two.width >= 1500 -%}{{ section.settings.image_two | img_url: '2000x' }} 2000w,{%- endif -%}
+      {{ section.settings.image_two | img_url: 'master' }} {{ section.settings.image_two.width }}w"
+    src="{{ section.settings.image_two | img_url: '1500x' }}"
+    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 200px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+    alt="{{ section.settings.image_two.alt | escape }}"
+    loading="lazy"
+    width="{{ section.settings.image_two.width }}"
+    height="{{ section.settings.image_two.height }}"
+    class="hero2__bg"
+  >
+{%- else -%}
+  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+{%- endif -%}
+    
+{% assign opacity2 = section.settings.opacity2 | divided_by: 100.00  %}
+    <div class="hero2__content-container" style="background-color:{{ section.settings.background2 | color_modify: 'alpha', opacity2 }}">
+      <div class="hero2__info">
+
+        {%- if section.settings.button_link2 != blank -%}
+
+        <a href="{{ section.settings.button_link2 }}"
+        class="hero2__button">{{ section.settings.button_text2 | escape }}</a>
+
+          
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Hero Two",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+  {
+    "type": "select",
+    "id": "hero_height",
+    "label": "Hero Height",
+    "options": [
+      {
+        "value": "25vh",
+        "label": "25%"
+      },
+      {
+        "value": "50vh",
+        "label": "50%"
+      },
+      {
+        "value": "75vh",
+        "label": "75%"
+      },
+      {
+        "value": "100vh",
+        "label": "100%"
+      }
+    ],
+    "default": "100vh"
+  },
+    {
+      "type": "image_picker",
+      "id": "image_one",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "color",
+      "id": "background1",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "opacity1",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Opacity",
+      "default": 50 
+    },
+    {
+      "type": "text",
+      "id": "button_text1",
+      "default": "Men",
+      "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+      "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+    },
+    {
+      "type": "url",
+      "id": "button_link1",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_two",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "color",
+      "id": "background2",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "opacity2",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Opacity",
+      "default": 50 
+    },
+    {
+      "type": "text",
+      "id": "button_text2",
+      "default": "Women",
+      "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+      "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+    },
+    {
+      "type": "url",
+      "id": "button_link2",
+      "label": "Button Link"
+    }
+    
+  ],
+
+  "presets": [
+    {
+      "name": "Hero Two"
+      
+    }
+  ]
+}
+{% endschema %}
