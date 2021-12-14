@@ -29,27 +29,34 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
+            "show_dynamic_checkout": true
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
           }
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
+            "share_label": "Share"
           }
         }
       },
@@ -65,16 +72,65 @@
         "share"
       ],
       "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "163948938299d030c7": {
+      "type": "hero-one",
+      "blocks": {
+        "16394893827396d903-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Title",
+            "title_size": "md"
+          }
+        },
+        "16394893827396d903-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "I’m baby deep v tbh offal, next level sriracha semiotics typewriter hoodie crucifix keffiyeh butcher. Beard helvetica pop-up, farm-to-table tumblr 90’s fashion axe."
+          }
+        },
+        "16394893827396d903-2": {
+          "type": "button",
+          "settings": {
+            "button_text": "Adidas",
+            "button_link": "shopify:\/\/collections\/adidas-1"
+          }
+        }
+      },
+      "block_order": [
+        "16394893827396d903-0",
+        "16394893827396d903-1",
+        "16394893827396d903-2"
+      ],
+      "settings": {
+        "hero_height": "100vh",
+        "image": "shopify:\/\/shop_images\/man-secret-shushing.jpg",
+        "background": "#000000",
+        "opacity": 50,
+        "info_alignment": "right"
       }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "163948938299d030c7"
   ]
 }
