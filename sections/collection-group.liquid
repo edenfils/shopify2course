@@ -1,7 +1,10 @@
+{{ 'Collection1.css' | asset_url | stylesheet_tag }}
+
+
 <section class="collection collection1">
     <div class="container">
       <div class="row">
-  
+
         {%- for block in section.blocks -%}
         <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
           <div class="collection1__collection-item">

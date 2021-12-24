@@ -38,6 +38,8 @@
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
+
+
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -125,7 +127,69 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'vendors.css' | asset_url | stylesheet_tag }}
+
+
+
+
+    {% style %}
+    :root {
+      --body-bg: {{ settings.body_background }};
+    }
+    body {
+      background-color: var(--body-bg);
+      overflow-x: hidden;
+    }
+    a:hover {
+      color: #f84c4c;
+    }
+    .fixed-nav.nav-transparent .header {
+      background: transparent;
+    }
+    .fixed-nav.nav-transparent .header a {
+      color: #fff;
+    }
+    .fixed-nav.nav-transparent
+      .header
+      .header1__collection-link
+      .collection-link__sub-links
+      a,
+    .fixed-nav.nav-transparent
+      .header
+      .header2__collection-link
+      .collection-link__sub-links
+      a,
+    .fixed-nav.nav-transparent
+      .header
+      .header3__collection-link
+      .collection-link__sub-links
+      a {
+      color: #000;
+    }
+    .fixed-nav.nav-transparent
+      .header
+      .header1__collection-link
+      .collection-link__sub-links
+      a:hover,
+    .fixed-nav.nav-transparent
+      .header
+      .header2__collection-link
+      .collection-link__sub-links
+      a:hover,
+    .fixed-nav.nav-transparent
+      .header
+      .header3__collection-link
+      .collection-link__sub-links
+      a:hover {
+      color: red;
+    }
+    .fixed-nav .header {
+      position: absolute;
+      width: 100%;
+      z-index: 20;
+    }
+    
+    {% endstyle %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -141,7 +205,7 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
 
-  <body class="fixed-nav nav-transparent">
+  <body class="fixed-nav nav-transparent" style="background: var(--body-bg)">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -151,6 +215,7 @@
     <main>
       {{ content_for_layout }}
     </main>
+
 
     {% section 'footer' %}
 

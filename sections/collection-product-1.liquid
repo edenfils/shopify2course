@@ -1,3 +1,6 @@
+{{ 'Collection1.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.all_products_count > 0  -%}
 <section class="collection collection1">
   <div class="container">
     <div class="row">
@@ -59,6 +62,114 @@
     </div>
   </div>
 </section>
+  {%- else -%}
+    <h2>Show demo</h2>
+    <section class="collection collection1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="collection1__collection-item">
+              <div class="collection1__product-img collection1__product-img--rectangle">
+                <div class="collection1__heart"><i class="far fa-heart"></i></div><img class="img-fluid"
+                srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+                  {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+                  {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+                  {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+                  {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+                  {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '2000x' }} 2000w,{%- endif -%}
+                  {{ product.images[0] | img_url: 'master' }} {{ product.images[0].width }}"
+                src="{{ product.images[0] | img_url: '1500x' }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 200px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ product.images[0].alt | escape }}"
+                loading="lazy"
+                width="{{ product.images[0].width }}"
+                height="{{ product.images[0].height }}"
+                class="hero1__bg"
+              >
+              </div>
+              <div class="collection1__product-info">
+                <div class="collection1__product-details"><span class="collection1__product-title">Sneakers</span><span
+                    class="collection1__product-price">$100</span></div>
+                <div class="collection1__colors">
+                  <div class="collection1__color collection1__color--blue"></div>
+                  <div class="collection1__color collection1__color--black"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection1__product-img collection1__product-img--rectangle">
+              <div class="collection1__heart"><i class="far fa-heart"></i></div><img class="img-fluid"
+              srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+                {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+                {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+                {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+                {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+                {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '2000x' }} 2000w,{%- endif -%}
+                {{ product.images[0] | img_url: 'master' }} {{ product.images[0].width }}"
+              src="{{ product.images[0] | img_url: '1500x' }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 200px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+              alt="{{ product.images[0].alt | escape }}"
+              loading="lazy"
+              width="{{ product.images[0].width }}"
+              height="{{ product.images[0].height }}"
+              class="hero1__bg"
+            >
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details"><span class="collection1__product-title">Product</span><span
+                  class="collection1__product-price">$100</span>
+                  <div>
+                    {%- for block in section.blocks -%}
+                        {%- case block.type -%}
+                          {%- when '@app' -%}
+                              {% render block %}
+                          {%- else -%}
+                            
+                        {%- endcase -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              <div class="collection1__colors">
+                <div class="collection1__color collection1__color--blue"></div>
+                <div class="collection1__color collection1__color--black"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="collection1__product-img collection1__product-img--rectangle">
+              <div class="collection1__heart"><i class="far fa-heart"></i></div><img class="img-fluid"
+              srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0] | img_url: '165x' }} 165w,{%- endif -%}
+                {%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+                {%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+                {%- if product.images[0].width >= 750 -%}{{ product.images[0] | img_url: '750x' }} 750w,{%- endif -%}
+                {%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '1070x' }} 1070w,{%- endif -%}
+                {%- if product.images[0].width >= 1500 -%}{{ product.images[0] | img_url: '2000x' }} 2000w,{%- endif -%}
+                {{ product.images[0] | img_url: 'master' }} {{ product.images[0].width }}"
+              src="{{ product.images[0] | img_url: '1500x' }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 200px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+              alt="{{ product.images[0].alt | escape }}"
+              loading="lazy"
+              width="{{ product.images[0].width }}"
+              height="{{ product.images[0].height }}"
+              class="hero1__bg"
+            >
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details"><span class="collection1__product-title">Product</span><span
+                  class="collection1__product-price">$100</span></div>
+              <div class="collection1__colors">
+                <div class="collection1__color collection1__color--blue"></div>
+                <div class="collection1__color collection1__color--black"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{%- endif -%}
+
+
 
 
 
@@ -266,6 +377,11 @@
     }
   ],
 
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
   "presets": [
     {
       "name": "Collection Product 1"
