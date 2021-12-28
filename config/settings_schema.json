@@ -22,9 +22,18 @@
         "info": "This is the background color for the wholel site"
       },
       {
-        "type": "header",
-        "content": "t:settings_schema.colors.settings.header__1.content"
+        "type": "checkbox",
+        "id": "header_sticky",
+        "label": "Stick header to the top",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Make the header transparent",
+        "default": true
       }
+      
     ]
   },
   {

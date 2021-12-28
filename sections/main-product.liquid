@@ -411,7 +411,9 @@
 </section>
 
 <script>
-  console.log('{{ product.title }}');
+  console.log('testing');
+  const productVariants = JSON.parse('{{ product.variants | json }}');
+  console.log( productVariants);
 </script>
 
 {% javascript %}
